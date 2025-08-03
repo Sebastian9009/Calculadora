@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones</title>
+</head>
+<body>
+    
+<h1> Calculadora </h1>
+
+<form  id="formnota" >
+
+    Ingresa el primer numero  <input type="number" id="num1" min="0" max="1000" required> <br> <br>
+    Ingresa el segundo numero  <input type="number" id="num2" min="0" max="1000" required> <br> <br>
+
+    Que operacion deeseas realizar: 
+    <select id="operador" name="miLista">
+    <option value="sumar">Suma</option>
+    <option value="restar">Resta</option>
+    <option value="multiplicacion">Multiplicar</option>
+    <option value="division">Dividir</option> </select>  <br> <br>
+
+    
+    <button type="submit"> Verificar </button>
+
+    <p class="result" id="resultado"></p>
+
+</form>
+
+
+    <script>
+    document.getElementById("formnota").addEventListener("submit", function (e){ 
+        e.preventDefault();
+    
+
+        let num1=parseFloat(document.getElementById("num1").value);
+        let num2=parseFloat(document.getElementById("num2").value);
+        let operador=document.getElementById("operador").value; 
+        let resultado=realizaroperacion(num1, num2, operador);
+        document.getElementById("resultado").textContent = "Resultado: " + resultado;
+            } );
+
+        function sumar(num1, num2) { return num1 + num2;}
+        function restar(num1, num2) { return num1 - num2;}
+        function multiplicacion (num1, num2) {return num1 * num2 ;}
+        function division (num1, num2) { return num2 !==0? num1 / num2 : "No se puede dividir entre cero"; }
+
+        
+        function realizaroperacion (num1, num2, operador) {
+            if(operador=="sumar"){ return sumar(num1,num2);}
+                else { if(operador=="restar") { return restar(num1,num2);}
+                else { if(operador=="multiplicacion") { return multiplicacion(num1,num2); } 
+                else { if(operador=="division") { return numb !==0? division(num1,num2): "no se puede dividir en cero"; }}}}
+            } 
+
+        
+
+        
+        </script>
+
+</body>
+</html>
