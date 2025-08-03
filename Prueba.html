@@ -19,7 +19,7 @@
     document.getElementById("formnota").addEventListener("submit", function (e){ 
         e.preventDefault(); // evita que se recargue la pagina
 
-        let nota = parseInt(document.getElementById("nota").value); //enlazar nota de entrada
+        let nota = parseInt(document.getElementById("nota").value); //enlazar nota de entrada solo dato numero parseint
         let resultado= document.getElementById("resNota");  //enlazar resultado de salida
 
         if (nota >= 90) { resultado.textContent="aprobado con honores";}

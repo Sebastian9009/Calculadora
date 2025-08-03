@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operaciones</title>
+    <link rel="stylesheet" href="formato.css">   
 </head>
 <body>
     
-<h1> Calculadora </h1>
+<h1> Calculadora </h1> <br> <br>
 
 <form  id="formnota" >
 
     Ingresa el primer numero  <input type="number" id="num1" min="0" max="1000" required> <br> <br>
     Ingresa el segundo numero  <input type="number" id="num2" min="0" max="1000" required> <br> <br>
 
-    Que operacion deeseas realizar: 
+    Que operacion deseas realizar: 
     <select id="operador" name="miLista">
     <option value="sumar">Suma</option>
     <option value="restar">Resta</option>
@@ -51,7 +52,7 @@
             if(operador=="sumar"){ return sumar(num1,num2);}
                 else { if(operador=="restar") { return restar(num1,num2);}
                 else { if(operador=="multiplicacion") { return multiplicacion(num1,num2); } 
-                else { if(operador=="division") { return numb !==0? division(num1,num2): "no se puede dividir en cero"; }}}}
+                else { if(operador=="division") { return num2 !==0? division(num1,num2): "no se puede dividir en cero"; }}}}
             } 
 
         
