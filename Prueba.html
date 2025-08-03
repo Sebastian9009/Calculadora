@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salario </title>
+</head>
+<body>
+<h1> Calificacion de alumno</h1>
+<form  id="formnota" >
+
+    Calificacion <input type="number" id="nota" min="0" max="100" required>
+    <button type="submit"> Verificar </button>
+</form>
+
+<p id="resNota">  </p>
+
+<script>
+    document.getElementById("formnota").addEventListener("submit", function (e){ 
+        e.preventDefault(); // evita que se recargue la pagina
+
+        let nota = parseInt(document.getElementById("nota").value); //enlazar nota de entrada
+        let resultado= document.getElementById("resNota");  //enlazar resultado de salida
+
+        if (nota >= 90) { resultado.textContent="aprobado con honores";}
+        else { 
+            if (nota >= 70 ) { resultado.textContent="Aprobado";}
+            else { resultado.textContent="Reprobado";}
+                
+        }
+
+
+
+    })    
+    
+</script>
+
+
+<br><br><br>
+<h1> Ciclo while </h1>
+
+<form  id="num" >
+
+    Calificacion <input type="number" id="nota" min="0" max="100" required>
+    <button type="submit"> Verificar </button>
+</form>
+
+<p id="resNota">  </p>
+
+
+<script> 
+let num = parseInt(document.getElementById("nota").value);// ingreso de dato
+
+let resultado = 0;
+let valor = 1;
+while ( valor<= num) { 
+    resultado = resultado + valor;
+    valor = valor +1;
+}
+
+</script>
+
+</body>
+</html>
