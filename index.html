@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones</title>
+    <link rel="stylesheet" href="formato.css">   
+</head>
+<body>
+    
+<h1> Calculadora </h1> <br> <br>
+
+<form  id="formnota" >
+
+    Ingresa el primer numero  <input type="number" id="num1" min="0" max="1000" required> <br> <br>
+    Ingresa el segundo numero  <input type="number" id="num2" min="0" max="1000" required> <br> <br>
+
+    Que operacion deseas realizar: 
+    <select id="operador" name="miLista">
+    <option value="sumar">Suma</option>
+    <option value="restar">Resta</option>
+    <option value="multiplicacion">Multiplicar</option>
+    <option value="division">Dividir</option> </select>  <br> <br>
+
+    
+    <button type="submit"> Resultado </button>
+
+    <p class="result" id="resultado"></p>
+
+</form>
+
+<h1>Calculadora con Bucle</h2>
+<button id="iniciar-bucle">Iniciar Calculadora con Bucle</button>
+
+<script src="calculadora.js">
+    // Archivo js
+</script>
+ 
+
+</body>
+</html>

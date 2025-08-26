@@ -1,15 +1,14 @@
- 
-    document.getElementById("formnota").addEventListener("submit", function (e){ 
-        e.preventDefault();
+document.getElementById("formnota").addEventListener("submit", function (e){ 
+    e.preventDefault();
     
 
-        let num1=parseFloat(document.getElementById("num1").value);
-        let num2=parseFloat(document.getElementById("num2").value);
-        let operador=document.getElementById("operador").value; 
-        let resultado=realizaroperacion(num1, num2, operador);
-        document.getElementById("resultado").textContent = "Resultado: " + resultado; 
-        num1.value = "";
-        num2.value = "";
+    let num1=parseFloat(document.getElementById("num1").value);
+    let num2=parseFloat(document.getElementById("num2").value);
+    let operador=document.getElementById("operador").value; 
+    let resultado=realizaroperacion(num1, num2, operador);
+    document.getElementById("resultado").textContent = "Resultado: " + resultado; 
+    num1.value = "";
+    num2.value = "";
 
          if (isNaN(num1) || isNaN(num2)) {
             resultado.textContent = "Error: Por favor, ingresa números válidos.";
@@ -18,10 +17,10 @@
         }
     });
                 
-        function sumar(num1, num2) { return num1 + num2;}
-        function restar(num1, num2) { return num1 - num2;}
-        function multiplicacion (num1, num2) {return num1 * num2 ;}
-        function division (num1, num2) { return num2 !==0? num1 / num2 : "No se puede dividir entre cero"; }
+    function sumar(num1, num2) { return num1 + num2;}
+    function restar(num1, num2) { return num1 - num2;}
+    function multiplicacion (num1, num2) {return num1 * num2 ;}
+    function division (num1, num2) { return num2 !==0? num1 / num2 : "No se puede dividir entre cero"; }
 
         
         function realizaroperacion (num1, num2, operador) {
@@ -31,6 +30,45 @@
                 else { if(operador=="division") { return num2 !==0? division(num1,num2): "no se puede dividir en cero"; }}}}
             } 
 
+            document.getElementById("iniciar-bucle").addEventListener("click", calculadoraBucle);
+
+function calculadoraBucle() {
+    let continuar = true;
+
+    while (continuar) {
+        let num1 = prompt("Ingresa el primer número:");
+        if (num1 === null) {
+            continuar = false;
+            break;
+        }
+
+        let num2 = prompt("Ingresa el segundo número:");
+        if (num2 === null) {
+            continuar = false;
+            break;
+        }
+
+        let operador = prompt("¿Qué operación deseas? (sumar, restar, multiplicacion, division):");
+
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Error: Por favor, ingresa números válidos.");
+            continue; 
+        }
+
+        let resultado = realizaroperacion(num1, num2, operador);
+        alert("El resultado de la operación es: " + resultado);
+        
+        let respuesta = prompt("¿Deseas realizar otra operación? (s/n)");
+        if (respuesta && respuesta.toLowerCase() !== 's') {
+            continuar = false;
+        }
+    }
+
+    alert("La calculadora con bucle ha finalizado.");
+}
         
 
         
